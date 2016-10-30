@@ -30,7 +30,7 @@ public class CafeTestAppl {
 	public static void main(String[] args) {
 
 		// loadConfiguration();
-		// addDataToTables(); dddd
+		// addDataToTables(); 
 		//cafeOrm.deleteCafeOrderById(1);
 		//cafeOrm.deleteCafeOrderById(2);
 		
@@ -39,7 +39,7 @@ public class CafeTestAppl {
 		// cafeOrm.setClientToOrder(1, 1);
 		// cafeOrm.setNGuestsToOrder(1, 5);
 		// cafeOrm.setDiscountToOrder(1, 20);
-		 cafeOrm.setOrderStatus(3, "closed");
+		// cafeOrm.setOrderStatus(3, "closed");
 		ctx.close();
 	}
 

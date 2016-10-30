@@ -17,8 +17,6 @@ import cafe.controller.data.TablePlaceData;
 import cafe.model.entities.*;
 
 public interface iOrmMethods {
-
-//	- логика авторизации
 	
 	// == ADD METHODS ==
 	boolean addSupplier(SupplierData data);

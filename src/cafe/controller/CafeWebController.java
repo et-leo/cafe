@@ -13,10 +13,11 @@ import cafe.model.entities.Supplier;
 
 @RestController 
 @SpringBootApplication
-//@EnableAutoConfiguration
 @ImportResource("classpath:beans.xml")
 
 public class CafeWebController {
+
+	
 	@Autowired
 	iOrmMethods cafe;
 

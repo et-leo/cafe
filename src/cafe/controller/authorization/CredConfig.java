@@ -2,26 +2,8 @@ package cafe.controller.authorization;
 
 import java.util.Map;
 
-
 public class CredConfig {
-	// public Staff staff;
-	//
-	// public CredConfig() {
-	// super();
-	// }
-	//
-	// public CredConfig(Staff staff) {
-	// super();
-	// this.staff = staff;
-	// }
-	//
-	// public Staff getStaff() {
-	// return staff;
-	// }
-	//
-	// public void setStaff(Staff staff) {
-	// this.staff = staff;
-	// }
+
 	public Map<String, String> credMap;
 	public Map<String, String> authMap;
 
