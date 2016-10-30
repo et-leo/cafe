@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
+
+
+	<bean id="emf"
+		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="springHibernate" />
+	</bean>
+	<bean
+		class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="emf" />
+	</bean>
+
+
+	<bean id="cafe" class="cafe.model.dao.CafeOrm" />
+
+	<bean id="credentials" class="cafe.controller.authorization.CredConfig">
+		<property name="credMap">
+			<map>
+				<entry key="admin" value="admin" />
+				<entry key="waiter" value="waiter" />
+				<entry key="manager" value="manager" />
+			</map>
+		</property>
+		<property name="authMap">
+			<map>
+				<entry key="admin" value="ROLE_admin" />
+				<entry key="waiter" value="ROLE_waiter" />
+				<entry key="manager" value="ROLE_manager" />
+			</map>
+		</property>
+	</bean>
+
+	<!-- <bean id="roleAdmin" class="cafe.model.entities.Role">
+	 <constructor-arg name="role" value="ROLE_admin" /> 
+	 	</bean> <bean id="staffAdmin" class="cafe.model.entities.Staff"> 
+			<constructor-arg name="name" value="admin" /> 
+			<constructor-arg name="password" value="admin" /> 
+			<constructor-arg name="role" ref="roleAdmin" /> 
+		</bean> -->
+
+	<!-- <bean id="credentials" class="cafe.controller.authorization.CredConfig"> 
+		<property name="staff" ref="staffAdmin" /> </bean> -->
+
+</beans>

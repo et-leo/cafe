@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
+
+
+	<!-- configuration -->
+	<bean id="configuration" class="cafe.configuration.CafeConfiguration">
+		<property name="nTables" value="4" />
+		<property name="roles" value="ROLE_admin,ROLE_manager,ROLE_waiter" />
+		<property name="orderStatus" value="open,to pay,closed" />
+	</bean>
+
+	<!-- <bean id="roleAdmin" class="cafe.controller.model.entities.Role">
+		<constructor-arg name="role" value="ROLE_admin" />
+	</bean>
+
+	<bean id="staffAdmin" class="cafe.controller.model.entities.Staff">
+		<constructor-arg name="name" value="admin" />
+		<constructor-arg name="password" value="admin" />
+		<constructor-arg name="role" ref="roleAdmin" />
+	</bean>
+
+	<bean id="credentials" class="cafe.controller.authorization.CredConfig">
+		<property name="staffData" ref="staffAdmin" />
+	</bean> -->
+
+	<bean id="table1" class="cafe.controller.data.TablePlaceData">
+		<constructor-arg name="id" value="1" />
+		<constructor-arg name="top" value="10" />
+		<constructor-arg name="left" value="10" />
+		<constructor-arg name="width" value="20" />
+		<constructor-arg name="height" value="20" />
+	</bean>
+	<bean id="table2" class="cafe.controller.data.TablePlaceData">
+		<constructor-arg name="id" value="2" />
+		<constructor-arg name="top" value="10" />
+		<constructor-arg name="left" value="50" />
+		<constructor-arg name="width" value="20" />
+		<constructor-arg name="height" value="20" />
+	</bean>
+	<bean id="table3" class="cafe.controller.data.TablePlaceData">
+		<constructor-arg name="id" value="3" />
+		<constructor-arg name="top" value="50" />
+		<constructor-arg name="left" value="10" />
+		<constructor-arg name="width" value="20" />
+		<constructor-arg name="height" value="20" />
+	</bean>
+	<bean id="table4" class="cafe.controller.data.TablePlaceData">
+		<constructor-arg name="id" value="4" />
+		<constructor-arg name="top" value="50" />
+		<constructor-arg name="left" value="50" />
+		<constructor-arg name="width" value="20" />
+		<constructor-arg name="height" value="20" />
+	</bean>
+</beans>
