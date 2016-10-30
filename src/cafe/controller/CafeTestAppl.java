@@ -29,7 +29,7 @@ public class CafeTestAppl {
 
 	public static void main(String[] args) {
 
-		// loadConfiguration();
+		// loadConfiguration(); ffffffs
 		// addDataToTables();
 		//cafeOrm.deleteCafeOrderById(1);
 		//cafeOrm.deleteCafeOrderById(2);
